@@ -1,0 +1,17 @@
+<% content_for :title, "New booking" %>
+
+<h1>New booking</h1>
+
+<%= form_with model: @booking do |f| %>
+  <%= f.hidden_field :seats, value: @seats %>
+  <%= f.hidden_field :flight_id, value: @booking.flight_id %>
+  <%= f.fields_for :passenger do |pf| %>
+    <%= pf.label :name %>
+    <%= pf.text_field :name %>
+    <br>
+    <%= pf.label :email %>
+    <%= pf.text_field :email %>
+  <% end %>
+  <br>
+  <%= f.submit "Book Now" %>
+<% end %>

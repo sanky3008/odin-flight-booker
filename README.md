@@ -1,24 +1,5 @@
-# README
+# Flight booker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This repo is written as a part of the Flight booker project in the Odin Project.
+https://www.theodinproject.com/lessons/ruby-on-rails-flight-booker
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
