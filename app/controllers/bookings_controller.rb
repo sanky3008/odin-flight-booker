@@ -28,11 +28,13 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     seats = params[:booking][:seats].to_i
+    @flight = Flight.find(booking_params[:flight_id])
     Rails.logger.debug seats
 
     respond_to do |format|
       if @booking.save
         @booking.flight.decrement!(:vacancy, seats)
+        PassengerMailer.with(passenger: @booking.passenger, flight: @flight).booking_confirmation.deliver_now
         format.html { redirect_to @booking, notice: "Booking was successfully created." }
         format.json { render :show, status: :created, location: @booking }
       else
